@@ -133,3 +133,32 @@ with st.spinner("Loading..."):
     time.sleep(0.5)
 st.success("Fertig!")
 
+st.subheader("Selectbox Beispiel")
+option = st.selectbox(
+    "Wähle eine Option:",
+    ["Option 1", "Option 2", "Option 3"]
+)
+st.radio("Wähle eine Zahl:", [10, 20, 30])
+slider_value = st.slider("Wähle einen Wert:", 0, 100, 50)
+st.select_slider("Wähle einen Buchstaben:", options=['A', 'B', 'C', 'D'], value='B')
+st.multiselect("Wähle mehrere Optionen:", ["Option A", "Option B", "Option C"], default=["Option A"])
+st.text_input("Gib deinen Namen ein:", value="Max Mustermann")
+st.text_area("Gib eine Beschreibung ein:", value="Dies ist ein Textbereich.")
+st.number_input("Gib eine Zahl ein:", min_value=0, max_value=100, value=25)
+st.date_input("Wähle ein Datum:")
+st.time_input("Wähle eine Uhrzeit:")
+st.file_uploader("Lade eine Datei hoch:")
+st.color_picker("Wähle eine Farbe:", value="#00ff00")
+st.button("Klicke mich!")
+st.checkbox("Ich stimme zu")
+st.toggle("Schalte mich um")
+
+with st.expander("Mehr Optionen"):
+    st.write("Hier sind weitere Optionen versteckt.")
+
+st.tabs(["Tab 1", "Tab 2", "Tab 3"])
+st.sidebar.title("Seitenleiste")
+st.sidebar.selectbox("Wähle eine Option in der Seitenleiste:", ["Seitenoption 1", "Seitenoption 2"])
+st.progress(75)
+st.session_state['my_key'] = 'my_value'
+st.write(f"Session State Wert: {st.session_state['my_key']}")
